@@ -100,7 +100,7 @@ app.post('/location',(req,res)=>{
     const kilometers = distanceCalculation(destination.latitude,destination.longitude,resp[Object.keys(resp)[0]].latitude,resp[Object.keys(resp)[0]].longitude,'K')
     
     console.log("Kilometers",kilometers)
-    if(kilometers < 0.003){
+    if(kilometers < 0.02){
         sendNotfication(Object.keys(resp)[0])
     }
     res.sendStatus(200)
